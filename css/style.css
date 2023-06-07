@@ -1,0 +1,1442 @@
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+*,
+*::before,
+*::after {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+/*Убираем линии обводки некоторых браузеров*/
+:focus,
+:active {
+    outline: none;
+}
+
+a:focus,
+a:active {
+    outline: none;
+}
+
+body {
+    height: 100%;
+    background-color: transparent;
+}
+
+.container {
+    background-color:#3B181E ;
+    max-width: 1440px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.navblock {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .navblock__logo {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .navblock__logo img {
+    width: 100%;
+  }
+  .navblock__txt {
+    font-size: 16px;
+  }
+  .navblock__txt:hover {
+    color: #3e1c21;
+    -webkit-transform: scale(1.1, 1.1);
+            transform: scale(1.1, 1.1);
+  }
+  
+  .navbar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 75px;
+    background: #EDEDED;
+  }
+  
+  .navbar__wrap {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    height: 100%;
+  }
+  
+  .hamb {
+    display: none;
+  }
+  
+  .popup {
+    display: none;
+  }
+  
+  .menu > li > a {
+    text-decoration: none;
+  }
+  
+  .navbar__wrap .menu {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  
+  .navbar__wrap .menu > li {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: stretch;
+        -ms-flex-align: stretch;
+            align-items: stretch;
+  }
+  
+  .navbar__wrap .menu > li > a {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding: 0 20px;
+    color: #FFFFFF;
+    font-family: "Forum";
+    font-size: 10px;
+  }
+  
+  .navbar__wrap .menu > li > a:hover {
+    color:  #000000;
+  }
+  @media (max-width: 1000px) {
+    .navbar__wrap .menu {
+      display: none;
+    }
+    .hamb {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+    }
+    .hamb__field {
+      padding: 10px 20px;
+      cursor: pointer;
+    }
+    .bar {
+      display: block;
+      width: 30px;
+      height: 3px;
+      margin: 6px auto;
+      background-color: #fff;
+      -webkit-transition: 0.2s;
+      transition: 0.2s;
+    }
+    .popup {
+      position: fixed;
+      top: 20px;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background-color: #fff;
+      z-index: 100;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-transition: 0.3s;
+      transition: 0.3s;
+    }
+    .popup.open {
+      left: 0;
+    }
+    .popup .menu {
+      width: 100%;
+      height: 100%;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      -webkit-box-pack: start;
+          -ms-flex-pack: start;
+              justify-content: start;
+      padding: 50px 0;
+      overflow: auto;
+    }
+    .popup .menu > li {
+      width: 100%;
+    }
+    .popup .menu > li > a {
+      width: 100%;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+      padding: 20px 0;
+      font-size: 20px;
+      font-weight: 400;
+      color: #000000;
+    }
+    .popup .menu > li > a:hover {
+      background-color: rgba(122, 82, 179, 0.1);
+    }
+    .hamb__field.active .bar:nth-child(2) {
+      opacity: 0;
+    }
+    .hamb__field.active .bar:nth-child(1) {
+      -webkit-transform: translateY(8px) rotate(45deg);
+              transform: translateY(8px) rotate(45deg);
+    }
+    .hamb__field.active .bar:nth-child(3) {
+      -webkit-transform: translateY(-8px) rotate(-45deg);
+              transform: translateY(-8px) rotate(-45deg);
+    }
+    body.noscroll {
+      overflow: hidden;
+    }
+  }
+@media screen and (max-width:500px){
+    .popup .menu > li > {
+        font-size: 16px;
+    }
+    
+}
+  
+.block{
+    width: 100%;
+}
+
+.sect-1 .container{
+    background-image: url(../img/фон.jpg);
+}
+
+
+ .flex-nav {
+    width: 100%;
+    height: 129px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    
+    
+}
+.logo {
+    width: 137px;
+    height: 42px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+@media screen and (max-width: 660px){
+    .logo{
+        width: 100px;
+        height: 30px;
+    }
+}
+.logo-menu{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.logo-menu a{
+    text-decoration: none;
+
+}
+
+.logo-menu ul {
+    list-style: none;
+    font-size: 13px;
+    font-family: 'Forum', cursive;
+  }
+  @media screen and (max-width: 1024px){
+    .logo-menu ul{
+        font-size: 11px;
+    }
+}
+@media screen and (max-width: 750px){
+    .logo-menu ul{
+        font-size: 9px;
+    }
+}
+@media screen and (max-width: 660px){
+    .logo-menu ul{
+        font-size: 7px;
+    }
+}
+  .logo-menu li::before {
+    color: #C4C4C4; 
+    display: inline-block; 
+    width: 1em;
+}
+
+.logo-menu li{
+    color: #FFFFFF;
+}
+
+.list {
+    display: flex;
+    flex-direction: row;
+    width: 70%;
+    justify-content: space-around;
+    align-items: flex-end;
+}
+
+.list a:hover {
+    opacity: 1;
+}
+
+.logo-menu a:hover li{
+    list-style: none;
+    color: #C4C4C4;
+}
+
+.logo-menu a:hover li::before{
+    content: "";
+
+}
+
+.logo-menu a:focus li{
+color:  #C4C4C4;
+}
+
+.logo-menu a:focus li::before{
+    content: "";
+
+}
+
+.info{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sect-1 h1{
+    text-align: center;
+    font-size: 100px;
+    font-family: 'Forum', cursive;
+    color: #FFFFFF;
+    line-height: 132.48px;
+    font-weight: 400;
+    letter-spacing: 9%;
+    width: 50%;
+    padding-top:10% ;
+}
+@media screen and (max-width: 1024px){
+    .sect-1 h1{
+        font-size: 90px;
+    }
+}
+@media screen and (max-width: 750px){
+    .sect-1 h1{
+        font-size: 80px;
+    }
+}
+@media screen and (max-width: 660px){
+    .sect-1 h1{
+        font-size: 70px;
+        line-height: 100px;
+    }
+}
+@media screen and (max-width: 550px){
+    .sect-1 h1{
+        font-size: 60px;
+        line-height: 90px;
+    }
+}
+@media screen and (max-width: 450px){
+    .sect-1 h1{
+        font-size: 50px;
+        line-height: 80px;
+    }
+}
+@media screen and (max-width: 390px){
+    .sect-1 h1{
+        font-size: 40px;
+        line-height: 60px;
+    }
+}
+@media screen and (max-width: 340px){
+    .sect-1 h1{
+        font-size: 30px;
+        line-height: 40px;
+    }
+}
+.info button{
+    width: 138%;
+    height: 50px;
+    background: none;
+    border: 1px solid #FFFFFF;
+    font-size: 12px;
+    font-family: 'Forum', cursive;
+    color: #FFFFFF;
+    letter-spacing: 15%;
+}
+@media screen and (max-width: 660px){
+    .info button{
+        font-size: 11px;
+        width: 120%;
+        height: 40px;
+    }
+}
+@media screen and (max-width: 550px){
+    .info button{
+        font-size: 10px;
+        height: 36px;
+    }
+}
+@media screen and (max-width: 450px){
+    .info button{
+        font-size: 9px;
+        height: 30px;
+    }
+}
+@media screen and (max-width: 390px){
+    .sect-1 button{
+        font-size:  8px;      
+        height: 24px;
+    }
+}
+.info button:hover{
+    list-style: none;
+    color: #C4C4C4;
+    border: 2px solid #C4C4C4;
+}
+.socsmot{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-top: 5%;
+    padding-left: 3%;
+    padding-right: 3%;
+    margin-bottom: 11%;
+}
+
+.sect-1 .block .social{
+    width: 4%;
+    display: flex;
+    flex-direction: column;
+
+}
+.sect-1 .social img{
+    width: 75%;
+    margin-bottom: 40%;
+}
+
+.social img:last-child{
+    margin-bottom: 0;
+}
+
+.sect-1 .smotr{
+    display: flex;
+    justify-content: flex-end;
+}
+.sect-1 .smotr {
+    -webkit-transform: rotate(90deg);
+}
+
+.smotr button{
+    width: 100%;
+    font-family: Forum;
+    font-size: 16px;
+    line-height: 22px;
+    line-height: 100%;
+    vertical-align: Top;
+    background: none;
+    color: #FFFFFF;
+    letter-spacing: 15%;
+}
+
+
+ @media screen and (max-width: 1024px){
+    .sect-1 h1{
+        font-size: 90px;
+    }
+    .smotr button{
+        font-size: 14px;
+    }
+}
+@media screen and (max-width: 750px){
+    .sect-1 h1{
+        font-size: 80px;
+    }
+    .smotr button{
+        font-size: 12px;
+    }
+}
+@media screen and (max-width: 660px){
+    .sect-1 h1{
+        font-size: 70px;
+        line-height: 100px;
+    }
+    .smotr button{
+        font-size: 10px;
+    }
+}
+@media screen and (max-width: 550px){
+    .sect-1 h1{
+        font-size: 60px;
+        line-height: 90px;
+    }
+    .smotr button{
+        font-size: 8px;
+    }
+}
+@media screen and (max-width: 450px){
+    .sect-1 h1{
+        font-size: 50px;
+        line-height: 80px;
+    }
+    .smotr button{
+        font-size: 6px;
+    }
+}
+@media screen and (max-width: 390px){
+    .sect-1 h1{
+        font-size: 40px;
+        line-height: 60px;
+    }
+    .smotr button{
+        font-size: 8px;
+    }
+}
+.sect-2 .block{
+    width: 70%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+@media screen and (max-width:550px){
+    .sect-2 .block{
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+    }    
+}
+.sect-2 .text{
+    width: 54%;
+    display: flex;
+    flex-direction: column;
+}
+@media screen and (max-width:550px){
+    .sect-2 .text{
+        width: 70%;
+        display: flex;
+        align-items: center;
+    }
+}
+.sect-2 .text h1{
+    text-align: left;
+    font-family: Forum;
+    Font-weight: 400;
+    Font-size: 50px;
+    Line-height: 100%;
+    Align-items: Left;
+    Vertical-align: Top;
+    color: #FFFFFF;
+    padding-bottom: 4%;
+}
+@media screen and (max-width: 1024px){
+    .sect-2 .text h1{
+        font-size: 40px;
+    }
+}
+@media screen and (max-width: 750px){
+    .sect-2 .text h1{
+        font-size: 36px;
+    }
+}
+@media screen and (max-width: 660px){
+    .sect-2 .text h1{
+        font-size: 30px;
+    }
+}
+@media screen and (max-width:550px){
+    .sect-2 .text h1{
+        padding-top: 2%;
+        text-align: center;
+    }
+}
+@media screen and (max-width:450px){
+    .sect-2 .text h1{
+        padding-top: 2%;
+        font-size:24px ;
+    }
+}
+@media screen and (max-width:380px){
+    .sect-2 .text h1{
+        padding-top: 4%;
+        font-size:20px ;
+    }
+}
+.sect-2 .text p{
+    width: 88%;
+    text-align: left;
+    font-family: Forum;
+    Font-weight: 400;
+    Font-size: 14px;
+    Line-height: 30px;
+    Vertical-align: Top;
+    color: #FFFFFF;
+    padding-bottom: 4%;
+    padding-top: 4%;
+}
+@media screen and (max-width: 1024px){
+    .sect-2 .text p{
+        font-size: 12px;
+    }
+}
+@media screen and (max-width: 750px){
+    .sect-2 .text p{
+        font-size: 11px;
+    }
+}
+@media screen and (max-width: 660px){
+    .sect-2 .text p{
+        font-size: 10px;
+        Line-height:26px;
+    }
+}
+@media screen and (max-width:550px){
+    .sect-2 .text p{
+        text-align: center;
+        Line-height: 20px;
+    }
+}
+@media screen and (max-width:450px){
+    .sect-2 .text p{
+        font-size: 8px;
+        Line-height: 18px;
+        width: 94%;
+    }
+}
+@media screen and (max-width:380px){
+    .sect-2 .text p{
+        font-size:7px ;
+        Line-height: 14px;
+    }
+
+}
+.sect-2 .text .line{
+    height: 1px;
+    width: 20%;
+    background: #FFFFFF;
+}
+
+
+.sect-2 img{
+    width: 50%;
+
+}
+@media screen and (max-width:550px){
+    .sect-2 img{
+        width: 70%;
+    }
+}
+@media screen and (max-width:380px){
+    .sect-2 img{
+        width:85%;
+    }
+}
+.sect-2 .text button{
+    width: 50%;
+    height: 50px;
+    background: none;
+    border: 1px solid #FFFFFF;
+    font-size: 12px;
+    font-family: 'Forum', cursive;
+    color: #FFFFFF;
+    letter-spacing: 15%;
+}
+@media screen and (max-width:620px){
+    .sect-2 .text button{
+     font-size: 10px;   
+    }
+}
+@media screen and (max-width:380px){
+    .sect-2 .text button{
+     font-size: 6px;   
+     height: 30px;
+     width: 40%;
+    }
+}
+.sect-2 .text button:hover{
+    list-style: none;
+    color: #C4C4C4;
+    border: 2px solid #C4C4C4;
+}
+
+
+.sect-3 .block{
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 3%;
+    margin-bottom: 3%;
+}
+@media screen and (max-width:550px){
+    .sect-3 .block{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+.sect-3 .block .flo{
+    width: 20%;
+}
+
+.tab-content img{
+    width: 50%;
+}
+
+@media screen and (max-width:550px){
+    .sect-3 .block img{
+        width: 75%;
+    }
+}
+.sect-3 .text{
+    width: 78%;
+    display: flex;
+    flex-direction: column;
+    align-items: center
+}
+@media screen and (max-width:550px){
+    .sect-3 .text{
+    width: 60%;
+    display: flex;
+    align-items: center;
+    }
+}
+.sect-3 .text h1{
+    text-align: left;
+    font-family: Forum;
+    Font-weight: 400;
+    Font-size: 50px;
+    Line-height: 100%;
+    Align-items: Left;
+    Vertical-align: Top;
+    color: #FFFFFF;
+    width: 90%;
+    padding-bottom: 4%;
+}
+@media screen and (max-width: 1024px){
+    .sect-3 .text h1{
+        font-size: 40px;
+    }
+}
+@media screen and (max-width: 750px){
+    .sect-3 .text h1{
+        font-size: 36px;
+    }
+}
+@media screen and (max-width: 660px){
+    .sect-3 .text h1{
+        font-size: 30px;
+    }
+}
+@media screen and (max-width:550px){
+    .sect-3 .text h1{
+        font-size: 27px;
+        text-align: center;
+        width: 100%;
+    }
+}
+@media screen and (max-width:450px){
+    .sect-3 .text h1{
+        padding-top: 2%;
+        font-size:24px ;
+    }
+}
+@media screen and (max-width:380px){
+    .sect-3 .text h1{
+        padding-top: 2%;
+        font-size:20px ;
+        padding-bottom: 4%;
+    }
+}
+.sect-3 .text p{
+    width: 90%;
+    text-align: left;
+    font-family: Forum;
+    Font-weight: 400;
+    Font-size: 14px;
+    Line-height: 30px;
+    Vertical-align: Top;
+    color: #FFFFFF;
+    padding-top: 4%;
+    padding-bottom: 4%;
+}
+@media screen and (max-width: 1024px){
+    .sect-3 .text p{
+        font-size: 12px;
+    }
+}
+@media screen and (max-width: 750px){
+    .sect-3 .text p{
+        font-size: 11px;
+    }
+}
+@media screen and (max-width: 660px){
+    .sect-3 .text p{
+        font-size: 10px;
+    }
+}
+@media screen and (max-width:550px){
+    .sect-3 .text p{
+        width: 120%;
+        font-size: 9px;
+        text-align: center;
+    }
+}
+@media screen and (max-width:450px){
+    .sect-3 .text p{
+        font-size: 8px;
+        Line-height: 18px;
+        width: 140%;
+    }
+}
+@media screen and (max-width:380px){
+    .sect-3 .text p{
+        font-size:7px ;
+        Line-height: 14px;
+    }
+
+}
+.sect-3 .text .line{
+    height: 2px;
+    width: 20%;
+    background: #FFFFFF;
+}
+.sect-3 .text button{
+    width: 35%;
+    height: 50px;
+    background: none;
+    border: 1px solid #FFFFFF;
+    font-size: 12px;
+    font-family: 'Forum', cursive;
+    color: #FFFFFF;
+    letter-spacing: 15%;
+}
+@media screen and (max-width:620px){
+    .sect-3 .text button{
+     font-size: 10px;   
+    }
+}
+@media screen and (max-width:550px){
+    .sect-3 .text button{
+        font-size: 10px;
+        width: 50%;
+        height: 40px;
+    }
+}
+
+@media screen and (max-width:380px){
+    .sect-3 .text button{
+     font-size: 6px;   
+     height: 30px;
+     width: 40%;
+    }
+}
+.sect-3 .text button:hover{
+    list-style: none;
+    color: #C4C4C4;
+    border: 2px solid #C4C4C4;
+}
+
+.floristtab{
+    display: inline-flex;
+    flex-direction: row;
+    margin-top: 5%;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.hide {
+	display: none;
+}
+.showph {
+    display: contents;
+}
+
+.fade {
+	animation: fade 2.5s;
+	-webkit-animation: fade 2.5s;
+}
+
+.flo.active {
+    font-size: 30px;
+    border-bottom: 4px solid #FFC803;
+    padding-bottom: 5%;
+}
+
+.modal {
+    font-family: 'Forum';
+	/*  */
+	display: none;
+	/*  */
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 100;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal_active {
+	display: block;
+}
+
+.modal__container{
+	width: 80%;
+	max-width: 700px;
+	margin: 100px auto;
+    align-items: center;
+	box-shadow: 1px 1px 10px #777777;
+	padding: 35px;
+	background-color: #fff;
+	/* Для анимации */
+	position: relative;
+	animation-name: animatetop;
+	animation-duration: 0.4s;
+}
+.modal__close,
+.modal__closeBtn {
+	font-size: 40px;
+	color: #777777;
+	cursor: pointer;
+	float: right;
+}
+@keyframes animatetop {
+	from {
+		top: -300px;
+		opacity: 0;
+	}
+	to {
+		top: 0;
+		opacity: 1;
+	}
+}
+
+ #otpravit{
+    width: 190px;
+    height: 52px;
+    color: #fff;
+    font-size: 20px;
+    background: #281014;
+    border-radius: 5px;
+}
+
+
+
+form p{
+font-size: 24px;
+margin-bottom: 2%;
+}
+
+input{
+    width: 100%;
+    background-color: #F8FAFB;
+    font-size: 20px;
+    padding-left: 3%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+
+
+@media screen and (max-width:550px){
+    input{
+        font-size: 10px;
+    }
+    form p{
+        font-size: 16px;
+    }
+}
+
+.sect-3 .photo{
+    display: flex;
+    flex-direction: row;
+    width: 60%;
+    justify-content: space-between;
+    padding-top: 4%;
+}
+
+.sect-3 .photo img{
+    width: 20%;
+}
+@media screen and (max-width:550px){
+    .sect-3 .photo {
+        width: 80%;
+    }
+}
+.sect-4 .header{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.sect-4 .header h1{
+    text-align: center;
+    font-family: Forum;
+    Font-weight: 400;
+    Font-size: 50px;
+    Line-height: 100%;;
+    Vertical-align: Top;
+    color: #FFFFFF;
+    width: 100%;
+    padding-bottom: 4%;
+}
+@media screen and (max-width: 1024px){
+    .sect-4 .header h1{
+        font-size: 40px;
+    }
+    
+}
+@media screen and (max-width: 750px){
+    .sect-4 .header h1{
+        font-size: 36px;
+    }
+}
+@media screen and (max-width: 660px){
+    .sect-4 .header h1{
+        font-size: 30px;
+    }
+}
+@media screen and (max-width:550px){
+    .sect-4 .header h1{
+        font-size: 27px;
+        text-align: center;
+        width: 100%;
+    }
+}
+@media screen and (max-width:450px){
+    .sect-4 .header h1{
+        padding-top: 2%;
+        font-size:24px ;
+    }
+}
+@media screen and (max-width:380px){
+    .sect-4 .header h1{
+        padding-top: 10%;
+        font-size:20px ;
+        padding-bottom: 4%;
+    }
+}
+.block .header .line{
+    display: flex;
+    justify-content: center;
+    height: 2px;
+    width: 20%;
+    background: #FFFFFF;
+}
+.sect-4 .block{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.sect-4 .cards{
+    width: 80%;;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding-bottom:12% ;
+    padding-top: 8%;
+    align-items: center;
+
+}
+.sect-4 .card{
+    background-color:#281014;
+    width: 30%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align:center ;
+    font-family: Forum;
+    Font-weight: 400;
+    font-size: 18px;
+    line-height: 150%;
+    color: #FFFFFF;
+}
+
+.f1.active-p + .accordeon {
+	display: block;
+
+}
+.f1.active-style {
+	color: #281014;
+	font-weight: 400;
+	text-decoration: none;
+}
+.accordeon{
+	/* max-height: 0;
+	transition: all 0.3s ease-out;
+	opacity: 0;
+	overflow: hidden; */
+
+	display: none;
+	font-size: 12px;
+	line-height: 100%;
+	text-align: center;
+	padding: 25px;
+	background-color: #281014;
+}
+@media screen and (max-width:1024px){
+    .accordeon{
+        font-size: 11px;
+    }
+    
+}
+@media screen and (max-width:920px){
+    .accordeon{
+        font-size: 9px;
+        padding: 5px;
+    }
+    
+}
+.prev,
+.next {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 45px;
+    z-index: 100;
+    width: 10%;
+    height: 99%;
+    top: 0;
+}
+.prev {
+    left: 0;
+}
+.next {
+    right: 0;
+}
+.prev:hover,
+.next:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+
+.sliderNew-dots {
+    text-align: center;
+    margin: 1rem 0;
+}
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #a0a1a9;
+    border-radius: 50%;
+    display: inline-block;
+}
+.dot.dot-active,
+.dot:hover {
+    background-color: #281014;
+}
+
+
+
+.sect-4 .block img{
+    width: 100%;
+}
+.sect-4 .text{
+    width: 100%;
+    height: 260px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+}
+.sect-4 .text button{
+    width: 50%;
+    height: 50px;
+    background: none;
+    border: 1px solid #FFFFFF;
+    font-size: 12px;
+    font-family: 'Forum', cursive;
+    color: #FFFFFF;
+    letter-spacing: 15%;
+    
+}
+
+.sect-4 .text button:hover{
+    list-style: none;
+    color: #C4C4C4;
+    border: 2px solid #C4C4C4;
+}
+@media screen and (max-width: 1024px){
+    .sect-4 .text {
+        height: 200px;
+    }
+    .accordeon{
+        font-size: 9px;
+    }
+    .sect-4 .text button{
+        font-size: 9px;
+        height: 30px;
+    }
+}
+@media screen and (max-width: 750px){
+    .sect-4 .text {
+        height: 180px;
+    }
+    .accordeon{
+        font-size: 8px;
+    }
+    .sect-4 .text button{
+        font-size: 8px;
+        height: 28px;
+    }
+}
+@media screen and (max-width: 660px){
+    .sect-4 .text {
+        height: 140px;}
+        .accordeon{
+            font-size: 7px;
+        }
+        .sect-4 .text button{
+            font-size: 7px;
+            height: 26px;
+        }
+}
+@media screen and (max-width:550px){
+    .sect-4 .text {
+        height: 120px;}
+        .accordeon{
+            font-size: 8px;
+        }
+        .sect-4 .text button{
+            font-size: 8px;
+            height: 23px;
+        }
+}
+@media screen and (max-width:450px){
+    .sect-4 .text {
+        height: 120px;}
+        .accordeon{
+            font-size: 7px;
+        }
+        .sect-4 .text button{
+            font-size: 7px;
+            height: 20px;
+        }
+}
+@media screen and (max-width:380px){
+        .sect-4 .text {
+            height: 80px;
+    }
+    .accordeon{
+        font-size: 6px;
+    }
+    .sect-4 .text button{
+        font-size: 6px;
+        height: 20px;
+    }
+}
+.sect-5 .block{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.sect-5 .tab{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 70%;
+}
+.sect-5 .list {
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    padding-top: 2%;
+    align-items: center;
+}
+.sect-5 .block .social{
+    width: 30%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-top: 2%;
+    padding-bottom: 4%;
+    justify-content: space-around;
+}
+.sect-5 .social img{
+    width: 6%;
+}
+
+.social img:last-child{
+    margin-right: 0;
+}
+.sect-5 .block .line{
+    height: 1px;
+    width: 100%;
+    background: #FFFFFF;
+
+}
+.sect-5 .block ul {
+    list-style: none;
+    font-size: 13px;
+    font-family: 'Forum', cursive;
+
+}
+.block .list a{
+    text-decoration: none;
+
+}
+
+.sect-5 .block li::before {
+    color: #C4C4C4; 
+    display: inline-block; 
+    width: 1em;
+}
+
+.sect-5 .block li{
+    color: #FFFFFF;
+    padding-bottom: 10%;
+    padding-top: 10%;
+
+}
+.block li:first-child{
+    padding-bottom: 5%;
+
+}
+ .block li:last-child{
+    padding-top: 5%;
+}
+
+
+@media screen and (max-width: 1024px){
+    .sect-5 .block ul{
+        font-size: 10px;
+    }
+}
+@media screen and (max-width: 750px){
+    .sect-5 .block ul{
+        font-size: 8px;
+    }
+}
+@media screen and (max-width: 660px){
+    .sect-5 .block ul{
+        font-size: 6px;
+    }
+}
+@media screen and (max-width: 440px){
+    .sect-5 .block ul{
+        font-size: 4px;
+    }
+}
+.sect-5 .block .list2 {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 2%;
+
+}
+ .soctab.allsoc{
+    font-family: "Forum";
+    color: #FFFFFF;
+}
+.contacts{
+    width: 90%;
+    display: inline-flex;
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+}
+
+.pcont{
+    background-color: #3e1c21;
+    border: 1px solid #FFFFFF;
+    padding: 2% 4%;
+}
+
+.cont{
+ font-size: 12px;
+ color: #FFFFFF;
+ font-family: "Forum";
+}
+
+.sect-5 .block .list2 a:hover {
+    opacity: 1;
+}
+
+.tab.filtr-act{
+    font-size: 25px;
+    font-weight: 400;
+    color: #FFFFFF;
+}
+
+.remove{
+    display: none;
+}
+
+.show{
+    display: inline-block;
+}
+@media screen and (max-width: 750px){
+    .cont{
+        font-size: 10px;
+    }
+    .soctab.allsoc{
+        font-size: 14px;
+    }
+}
+@media screen and (max-width: 660px){
+    .cont{
+        font-size: 8px;
+    }
+    .soctab.allsoc{
+        font-size: 12px;
+    }
+}
+@media screen and (max-width: 440px){
+    .cont{
+        font-size: 6px;
+    }
+    .soctab.allsoc{
+        font-size: 10px;
+    }
+}
